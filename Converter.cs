@@ -84,14 +84,18 @@ namespace CSV2Class
 
         private void FirstCaseHandler()
         {
-            Tuple<bool, string> isCreated = new ParseCSVToCsharp(daElaborare).CreaClasseDaCSV(false);
+            //Tuple<bool, string> isCreated = new ParseCSVToCsharp(daElaborare).CreaClasseDaCSV(false);
+
+            Tuple<bool, string> isCreated = ParseCSVToCsharp.CreaClasseDaCSV(false, daElaborare);
 
             MessageBox.Show(isCreated.Item1 is true ? $"Creata la classe con successo a {daElaborare}" : $"Si è presentato un'errore nella creazione della classe {isCreated.Item2}", isCreated.Item1 is true ? isCreated.Item2 : "Attenzione", MessageBoxButtons.OK, isCreated.Item1 is true ? MessageBoxIcon.Information : MessageBoxIcon.Error);
         }
 
         private void SecondCaseHandler()
         {
-            Tuple<bool, string> isCreatedComplex = new ParseCSVToCsharp(daElaborare).CreaClasseDaCSV(true);
+            //Tuple<bool, string> isCreatedComplex = new ParseCSVToCsharp(daElaborare).CreaClasseDaCSV(true);
+
+            Tuple<bool, string> isCreatedComplex = ParseCSVToCsharp.CreaClasseDaCSV(true, daElaborare);
 
             MessageBox.Show(isCreatedComplex.Item1 is true ? $"Creata la classe con successo a {daElaborare}" : $"Si è presentato un'errore nella creazione della classe {isCreatedComplex.Item2}", isCreatedComplex.Item1 is true ? isCreatedComplex.Item2 : "Attenzione", MessageBoxButtons.OK, isCreatedComplex.Item1 is true ? MessageBoxIcon.Information : MessageBoxIcon.Error);
         }
